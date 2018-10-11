@@ -1,6 +1,3 @@
-// testReadYuvSpeed.cpp : 定义控制台应用程序的入口点。
-//
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
@@ -49,8 +46,8 @@ int main(int argc, char * argv[])
             break;
         }
         tm_cur = (double)(clock() - tm_start) + 1e-9;
-        printf("Frame [%4d]: %12.3lf sec, %8.3lf fps\n",
-               frame_no, 
+        printf("Frame [%4d] %dx%d %d-bit: %12.3lf sec, %8.3lf fps\n",
+               frame_no, img_w, img_h, bit_depth,
                tm_cur / CLOCKS_PER_SEC,
                frame_no * CLOCKS_PER_SEC / tm_cur);
     }
